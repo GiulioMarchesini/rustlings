@@ -1,13 +1,26 @@
 fn trim_me(input: &str) -> &str {
-    // TODO: Remove whitespace from both ends of a string.
+    input.trim()
 }
 
 fn compose_me(input: &str) -> String {
-    // TODO: Add " world!" to the string! There are multiple ways to do this.
+    input.to_string() + " world!"
 }
 
 fn replace_me(input: &str) -> String {
-    // TODO: Replace "cars" in the string with "balloons".
+    // input.replace("cars", "balloons") // too easy
+    let to_find: &str = "cars";
+    let to_replace: &str = "balloons";
+
+    match input.find(to_find) {
+        Some(index) => {
+            let mut new_string = String::new();
+            new_string.push_str(&input[..index]);
+            new_string.push_str(to_replace);
+            new_string.push_str(&input[index + to_find.len()..]);
+            new_string
+        }
+        None => input.to_string(),
+    }
 }
 
 fn main() {

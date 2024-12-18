@@ -2,13 +2,13 @@
 
 from <https://github.com/rust-lang/rustlings>
 
-## for start all exercises:
+## for start all exercises
 
 ```bash
 rustlings
 ```
 
-## for update rustlings:
+## for update rustlings
 
 ```bash
 cargo install rustlings
